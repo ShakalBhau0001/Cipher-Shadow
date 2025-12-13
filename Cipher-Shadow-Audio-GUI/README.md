@@ -10,7 +10,7 @@ The project uses **Fernet encryption**, **PBKDF2-HMAC key derivation**, and **LS
 ```bash
 Cipher-Shadow-Audio-GUI/
 │
-├── audio_encrypt.py     # Main GUI Application
+├── audio_encrypt_gui.py     # Main GUI Application
 └── README.md            # Project documentation
 ```
 
@@ -83,7 +83,7 @@ cd Cipher-Shadow-Audio-GUI
 **3. Run the GUI:**
 
 ```bash
-python audio_encrypt.py
+python audio_encrypt_gui.py
 ```
 
 ---
