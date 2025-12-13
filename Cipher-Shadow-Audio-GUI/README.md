@@ -11,7 +11,7 @@ The project uses **Fernet encryption**, **PBKDF2-HMAC key derivation**, and **LS
 Cipher-Shadow-Audio-GUI/
 │
 ├── audio_encrypt_gui.py     # Main GUI Application
-└── README.md            # Project documentation
+└── README.md                # Project documentation
 ```
 
 ---
