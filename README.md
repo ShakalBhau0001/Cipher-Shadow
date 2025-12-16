@@ -1,10 +1,12 @@
 ## 🔐 Cipher-Shadow  
-### A Modular Encryption & Steganography Toolkit (Audio • Image • More)
+### A Modular Encryption & Steganography Toolkit
 
-Cipher-Shadow is a growing Python-based repository focused on **secure encryption and steganography techniques** for multiple digital formats.  
-The project currently includes **audio-based encryption & steganography tools** and is designed to expand with **image encryption, image steganography, and additional formats** in the future.
+**Cipher-Shadow** is a growing Python-based repository focused on **secure encryption and steganography techniques** for multiple digital formats.  
+The project currently includes :-
+- **Audio-based encryption & steganography (GUI + CLI)**
+- **Image-based encryption & steganography (GUI)**
 
-Each module is implemented as an independent sub-project (GUI & CLI), making the repository clean, scalable, and easy to extend.
+Each module is implemented as an **independent sub-project**, keeping the codebase clean and easy to maintain.
 
 ---
 
@@ -14,15 +16,19 @@ Each module is implemented as an independent sub-project (GUI & CLI), making the
 
 Cipher-Shadow/
 │
-├── Cipher-Shadow-Audio-GUI/          # GUI-based audio steganography project
-│   ├── audio_encrypt_gui.py          # Main Tkinter GUI application
-│   └── README.md                     # GUI project documentation
+├── Cipher-Shadow-Audio-GUI/           # GUI-based audio steganography
+│   ├── audio_encrypt_gui.py           # Main Tkinter GUI application
+│   └── README.md                      # Audio GUI documentation
 │
-├── Cipher-Shadow-Audio-CLI/          # Command-line audio steganography project
-│   ├── audio_encrypt_cli.py          # Main CLI application (encrypt/decrypt)
-│   └── README.md                     # CLI project documentation
+├── Cipher-Shadow-Audio-CLI/           # Command-line audio steganography
+│   ├── audio_encrypt_cli.py           # CLI encrypt-decrypt tool
+│   └── README.md                      # Audio CLI documentation
 │
-└── README.md                         # Main repository overview
+├── Cipher-Shadow-Image-GUI/           # GUI-based image steganography
+│   ├── image_encrypt_gui.py           # Main Tkinter GUI application
+│   └── README.md                      # Image GUI documentation
+│
+└── README.md                          # Main repository overview
 
 ```
 
@@ -78,22 +84,54 @@ It provides the same cryptographic and steganographic capabilities as the GUI ve
 
 ---
 
+### 3️⃣ Cipher-Shadow-Audio-CLI 🖼️💻
+
+A **Tkinter-based GUI application** that enables users to:
+- Encrypt a secret message using a password
+- Embed the encrypted data into a **PNG image using LSB steganography**
+- Extract and decrypt the hidden message securely
+
+**Highlights:**
+- Clean and intuitive GUI
+- Load message from text box or `.txt` file
+- Supports PNG (recommended) and JPG/JPEG as carrier images
+- Always outputs lossless PNG to preserve hidden data
+- Uses MAGIC header validation for payload integrity
+
+**Technology Focus:**
+- Tkinter GUI
+- Pillow (PIL) for image processing
+- Fernet (AES) encryption
+- PBKDF2-HMAC key derivation
+- LSB image steganography
+
+📄 See `Cipher-Shadow-Image-GUI/README.md` for full details.
+
+---
+
 ## 🔐 Core Concepts Used
 
 - **Fernet Encryption (AES-128, authenticated)**
-- **PBKDF2-HMAC (SHA256, 390k iterations)** for key derivation
+- **PBKDF2-HMAC (SHA256, 390,000 iterations)** for key derivation
 - **LSB (Least Significant Bit) Steganography**
 - **16-bit PCM WAV audio processing**
+- **Binary-safe payload packing with MAGIC headers**
 
 ---
 
 ## 📌 Supported Format
+- Audio :
+  - **Carrier Audio:** 16-bit PCM WAV only  
+  - **Output Audio:** WAV  
+  - **Hidden Data:** Text / `.txt` file
 
-- **Carrier Audio:** 16-bit PCM WAV only  
-- **Output Audio:** WAV  
-- **Hidden Data:** Text / `.txt` file  
+- Image :
+  - **Carrier Image:** PNG (recommended), JPG/JPEG
+  - **Output Image:** PNG Only  
+  - **Hidden Data:** Text / `.txt` file
+ 
 
-> ⚠️ Non–16-bit WAV files are intentionally rejected for safety and correctness.
+> ⚠️ Lossy formats are avoided for output to prevent data corruption.
 
 ---
 
@@ -126,6 +164,7 @@ python audio_encrypt_gui.py
 - **Python 3.9+**
 - **Tkinter (GUI)**
 - **argparse (CLI)**
+- **Pillow (Image processing)**
 - **wave / array (Audio processing)**
 - **cryptography (Fernet + PBKDF2)**
 - **LSB Steganography**
