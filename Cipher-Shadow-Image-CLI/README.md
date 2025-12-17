@@ -158,7 +158,7 @@ python image_encrypt_cli.py decrypt --in-image outputfile.png --password yourpas
 - Message encrypted using Fernet
 - Payload format:
   ```bash
-  [AUDS][16-byte salt][4-byte length][encrypted data]
+  [STEG][16-byte salt][4-byte length][encrypted data]
   ```
 
 **3️⃣ Embedding**
