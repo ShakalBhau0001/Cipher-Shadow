@@ -4,7 +4,7 @@
 **Cipher-Shadow** is a growing Python-based repository focused on **secure encryption and steganography techniques** for multiple digital formats.  
 The project currently includes :-
 - **Audio-based encryption & steganography (GUI + CLI)**
-- **Image-based encryption & steganography (GUI)**
+- **Image-based encryption & steganography (GUI + CLI)**
 
 Each module is implemented as an **independent sub-project**, keeping the codebase clean and easy to maintain.
 
@@ -16,19 +16,23 @@ Each module is implemented as an **independent sub-project**, keeping the codeba
 
 Cipher-Shadow/
 │
-├── Cipher-Shadow-Audio-GUI/           # GUI-based audio steganography
-│   ├── audio_encrypt_gui.py           # Main Tkinter GUI application
-│   └── README.md                      # Audio GUI documentation
+├── Cipher-Shadow-Audio-GUI/            # GUI-based audio steganography
+│   ├── audio_encrypt_gui.py            # Tkinter GUI application
+│   └── README.md                       # Audio GUI documentation
 │
-├── Cipher-Shadow-Audio-CLI/           # Command-line audio steganography
-│   ├── audio_encrypt_cli.py           # CLI encrypt-decrypt tool
-│   └── README.md                      # Audio CLI documentation
+├── Cipher-Shadow-Audio-CLI/            # CLI-based audio steganography
+│   ├── audio_encrypt_cli.py            # Audio encrypt/decrypt CLI tool
+│   └── README.md                       # Audio CLI documentation
 │
-├── Cipher-Shadow-Image-GUI/           # GUI-based image steganography
-│   ├── image_encrypt_gui.py           # Main Tkinter GUI application
-│   └── README.md                      # Image GUI documentation
+├── Cipher-Shadow-Image-GUI/            # GUI-based image steganography
+│   ├── image_encrypt_gui.py            # Tkinter GUI application
+│   └── README.md                       # Image GUI documentation
 │
-└── README.md                          # Main repository overview
+├── Cipher-Shadow-Image-CLI/            # CLI-based image steganography
+│   ├── image_encrypt_cli.py            # Image encrypt/decrypt CLI tool
+│   └── README.md                       # Image CLI documentation
+│
+└── README.md                           # Main repository overview
 
 ```
 
@@ -47,15 +51,15 @@ A **Tkinter-based GUI application** that allows users to:
 - Clean and user-friendly interface
 - Load message from text box or `.txt` file
 - Password-based encryption using Fernet
-- Built-in error handling and status updates
+- Real-time status & error handling
 
-**Technology Focus:**
-- Tkinter GUI
+**Tech Stack:**
+- Tkinter
 - Fernet (AES) encryption
 - PBKDF2-HMAC key derivation
 - LSB audio steganography
 
-📄 See `Cipher-Shadow-Audio-GUI/README.md` for full details.
+📄 See `Cipher-Shadow-Audio-GUI/README.md`
 
 ---
 
@@ -63,75 +67,95 @@ A **Tkinter-based GUI application** that allows users to:
 
 A **Command Line Interface (CLI) tool** designed for:
 - Terminal users
-- Advanced users
-- Automation & scripting workflows
-
-It provides the same cryptographic and steganographic capabilities as the GUI version, but controlled entirely via command-line arguments.
+- Automation & scripting
+- Security experimentation
 
 **Highlights:**
-- Encrypt & embed messages via terminal commands
-- Decrypt hidden messages directly in CLI
-- Script-friendly and lightweight
+- Encrypt & embed messages via CLI
+- Decrypt messages directly in terminal
+- Lightweight and script-friendly
 - Ideal for security testing and learning purposes
 
-**Technology Focus:**
-- argparse for CLI handling
+**Tech Stack:**
+- argparse
 - Fernet encryption
 - PBKDF2-HMAC key derivation
 - LSB WAV steganography
 
-📄 See `Cipher-Shadow-Audio-CLI/README.md` for usage instructions.
+📄 See `Cipher-Shadow-Audio-CLI/README.md`
 
 ---
 
-### 3️⃣ Cipher-Shadow-Audio-CLI 🖼️💻
+### 3️⃣ Cipher-Shadow-Image-GUI 🖼️💻
 
-A **Tkinter-based GUI application** that enables users to:
+A **GUI-based image steganography tool** that allows users to:
 - Encrypt a secret message using a password
-- Embed the encrypted data into a **PNG image using LSB steganography**
-- Extract and decrypt the hidden message securely
+- Embed encrypted data inside images using **LSB steganography**
+- Securely extract and decrypt hidden messages
 
 **Highlights:**
-- Clean and intuitive GUI
-- Load message from text box or `.txt` file
-- Supports PNG (recommended) and JPG/JPEG as carrier images
-- Always outputs lossless PNG to preserve hidden data
-- Uses MAGIC header validation for payload integrity
+- Clean Tkinter GUI
+- Supports text or `.txt` file input
+- PNG output enforced for data safety
+- MAGIC header validation for integrity
 
-**Technology Focus:**
-- Tkinter GUI
-- Pillow (PIL) for image processing
+**Tech Stack:**
+- Tkinter
+- Pillow (PIL)
 - Fernet (AES) encryption
 - PBKDF2-HMAC key derivation
 - LSB image steganography
 
-📄 See `Cipher-Shadow-Image-GUI/README.md` for full details.
+📄 See `Cipher-Shadow-Image-GUI/README.md`
+
+---
+
+### 4️⃣ Cipher-Shadow-Image-CLI 🖼️💻
+A **CLI-based image steganography tool** for advanced users and automation.
+
+
+**Highlights:**
+- Script-friendly design
+- Uses lossless PNG output
+- Payload integrity check using MAGIC header
+- Secure password-derived encryption
+
+**Tech Stack:**
+- argparse
+- Pillow (PIL)
+- Fernet (AES-128)
+- PBKDF2-HMAC (SHA256)
+- LSB Image Steganography
+
+📄 See `Cipher-Shadow-Image-CLI/README.md`
 
 ---
 
 ## 🔐 Core Concepts Used
 
 - **Fernet Encryption (AES-128, authenticated)**
-- **PBKDF2-HMAC (SHA256, 390,000 iterations)** for key derivation
+- **PBKDF2-HMAC (SHA256, 390,000 iterations)**
 - **LSB (Least Significant Bit) Steganography**
 - **16-bit PCM WAV audio processing**
-- **Binary-safe payload packing with MAGIC headers**
+- **Binary-safe payload packing**
+- **MAGIC header validation**
+- **Lossless carrier enforcement**
 
 ---
 
 ## 📌 Supported Format
-- Audio :
+- 🎵 Audio :
   - **Carrier Audio:** 16-bit PCM WAV only  
   - **Output Audio:** WAV  
   - **Hidden Data:** Text / `.txt` file
 
-- Image :
+- 🖼️ Image :
   - **Carrier Image:** PNG (recommended), JPG/JPEG
   - **Output Image:** PNG Only  
   - **Hidden Data:** Text / `.txt` file
  
 
-> ⚠️ Lossy formats are avoided for output to prevent data corruption.
+> ⚠️ Lossy formats are avoided for output to prevent data & payload corruption.
 
 ---
 
