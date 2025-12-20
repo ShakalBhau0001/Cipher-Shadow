@@ -176,6 +176,6 @@ python audio_encrypt_cli.py decrypt --in-wav outputfile.wav --password yourpassw
 
 > **Shakal Bhau**
 
-> **[GitHub](https://github.com/ShakalBhau0001)**
+> **GitHub:[ShakalBhau0001](https://github.com/ShakalBhau0001)**
 
 ---
