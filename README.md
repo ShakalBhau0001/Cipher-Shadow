@@ -3,10 +3,12 @@
 
 **Cipher-Shadow** is a growing Python-based repository focused on **secure encryption and steganography techniques** for multiple digital formats.  
 The project currently includes :-
-- **Audio-based encryption & steganography (GUI + CLI)**
-- **Image-based encryption & steganography (GUI + CLI)**
+- **Audio-based encryption & steganography**
+- **Image-based encryption & steganography**
+- **Generic file encryption & decryption**
 
 Each module is implemented as an **independent sub-project**, keeping the codebase clean and easy to maintain.
+Each module works independently, keeping the repository **clean, scalable, and easy to extend**.
 
 ---
 
@@ -32,9 +34,9 @@ Cipher-Shadow/
 │   ├── image_encrypt_cli.py            # Image encrypt/decrypt CLI tool
 │   └── README.md                       # Image CLI documentation
 │
-├── Cipher-Shadow-File-GUI/             # GUI-based file steganography
+├── Cipher-Shadow-File-GUI/             # GUI-based file encryption/decryption
 │   ├── file_encrypt_gui.py             # Main GUI application
-│   └── README.md                       # Project documentation
+│   └── README.md                       # File GUI documentation
 │
 └── README.md                           # Main repository overview
 
@@ -135,6 +137,27 @@ A **CLI-based image steganography tool** for advanced users and automation.
 
 ---
 
+#### 5️⃣ Cipher-Shadow-File-GUI 📁🔐
+A **GUI-based file encryption & decryption tool** designed to securely protect any file type (documents, images, videos, archives, etc.).
+
+Unlike steganography modules, this project focuses on **pure cryptographic file protection**
+
+**Highlights:**
+- Simple, clean Tkinter interface
+- Encrypt any file type using a password
+- Secure decryption restores the original file name
+- Encryption & decryption panels inside a single window
+
+**Tech Stack:**
+- Tkinter
+- cryptography (Fernet + PBKDF2-HMAC)
+- secrets / base64
+- Binary-safe file handling
+
+📄 See `Cipher-Shadow-File-GUI/README.md`
+
+---
+
 ## 🔐 Core Concepts Used
 
 - **Fernet Encryption (AES-128, authenticated)**
@@ -157,7 +180,11 @@ A **CLI-based image steganography tool** for advanced users and automation.
   - **Carrier Image:** PNG (recommended), JPG/JPEG
   - **Output Image:** PNG Only  
   - **Hidden Data:** Text / `.txt` file
- 
+
+- 📁 File :
+  - **Input:** Any file type
+  - **Output:** `.enc` encrypted file
+  - **Restored Output:** Original file (name + bytes preserved)
 
 > ⚠️ Lossy formats are avoided for output to prevent data & payload corruption.
 
@@ -194,7 +221,7 @@ python audio_encrypt_gui.py
 - **argparse (CLI)**
 - **Pillow (Image processing)**
 - **wave / array (Audio processing)**
-- **cryptography (Fernet + PBKDF2)**
+- **cryptography (Fernet + PBKDF2-HMAC)**
 - **LSB Steganography**
 
 ---
