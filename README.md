@@ -35,8 +35,12 @@ Cipher-Shadow/
 │   └── README.md                       # Image CLI documentation
 │
 ├── Cipher-Shadow-File-GUI/             # GUI-based file encryption/decryption
-│   ├── file_encrypt_gui.py             # Main GUI application
+│   ├── file_encrypt_gui.py             # Tkinter GUI application
 │   └── README.md                       # File GUI documentation
+│
+├── Cipher-Shadow-File-CLI/             # CLI-based file encryption/decryption
+│   ├── file_encrypt_cli.py             # File encrypt/decrypt CLI tool
+│   └── README.md                       # File CLI documentation
 │
 └── README.md                           # Main repository overview
 
