@@ -162,6 +162,28 @@ Unlike steganography modules, this project focuses on **pure cryptographic file 
 
 ---
 
+#### 6️⃣ Cipher-Shadow-File-CLI 📁💻
+A **CLI-based file encryption & decryption tool** for users who prefer terminal-based workflows, scripting, and automation.
+
+This module provides the same cryptographic guarantees as the GUI version but is optimized for **headless usage and security testing**.
+
+**Highlights:**
+- Encrypt & decrypt any file directly from the terminal
+- Password-based encryption using Fernet
+- Preserves original file name & content
+- Script-friendly and automation-ready
+- Clear error handling for invalid files or passwords
+
+**Tech Stack:**
+- argparse
+- cryptography (Fernet + PBKDF2-HMAC)
+- secrets / base64
+- Binary-safe file I/O
+
+📄 See `Cipher-Shadow-File-CLI/README.md`
+
+---
+
 ## 🔐 Core Concepts Used
 
 - **Fernet Encryption (AES-128, authenticated)**
@@ -171,6 +193,7 @@ Unlike steganography modules, this project focuses on **pure cryptographic file 
 - **Binary-safe payload packing**
 - **MAGIC header validation**
 - **Lossless carrier enforcement**
+- **Password-based file encryption (non-steganographic)**
 
 ---
 
@@ -179,16 +202,19 @@ Unlike steganography modules, this project focuses on **pure cryptographic file 
   - **Carrier Audio:** 16-bit PCM WAV only  
   - **Output Audio:** WAV  
   - **Hidden Data:** Text / `.txt` file
+  - **Interfaces:** GUI & CLI supported
 
 - 🖼️ Image :
   - **Carrier Image:** PNG (recommended), JPG/JPEG
   - **Output Image:** PNG Only  
   - **Hidden Data:** Text / `.txt` file
+  - **Interfaces:** GUI & CLI supported
 
 - 📁 File :
   - **Input:** Any file type
-  - **Output:** `.enc` encrypted file
-  - **Restored Output:** Original file (name + bytes preserved)
+  - **Encrypted Output:** `.enc`
+  - **Decrypted Output:** Original file (name + bytes preserved)
+  - **Interfaces:** GUI & CLI supported
 
 > ⚠️ Lossy formats are avoided for output to prevent data & payload corruption.
 
@@ -206,9 +232,9 @@ git clone https://github.com/ShakalBhau0001/Cipher-Shadow.git
 cd Cipher-Shadow/Cipher-Shadow-Audio-GUI
 ```
 
-3.**Install dependencies (if applicable)**
+3.**Install dependencies**
 ```bash
-pip install -r requirements.txt
+pip install cryptography pillow
 ```
 
 4. **Run the project**
@@ -227,6 +253,13 @@ python audio_encrypt_gui.py
 - **wave / array (Audio processing)**
 - **cryptography (Fernet + PBKDF2-HMAC)**
 - **LSB Steganography**
+
+---
+
+## ⚠️ Security Disclaimer
+
+This project is intended for **educational and learning purposes**.  
+While modern cryptographic primitives are used, it has not undergone formal security audits.
 
 ---
 
