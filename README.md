@@ -265,7 +265,7 @@ While modern cryptographic primitives are used, it has not undergone formal secu
 
 ## 🪪 Author
 
-> **Created by: Shakal Bhau**
+> **Creator: Shakal Bhau**
 
 > **GitHub: [ShakalBhau0001](https://github.com/ShakalBhau0001)**
 
