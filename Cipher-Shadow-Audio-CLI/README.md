@@ -1,4 +1,4 @@
-# 🎵 Cipher-Shadow-Audio-CLI 🔐
+## 🎵 Cipher-Shadow-Audio-CLI 🔐
 
 A Python-based **Audio Steganography Command Line Tool** that allows you
 to **encrypt a hidden message** and embed it inside a **16-bit WAV audio
@@ -174,7 +174,7 @@ python audio_encrypt_cli.py decrypt --in-wav outputfile.wav --password yourpassw
 
 ## 🪪 Author
 
-> **Shakal Bhau**
+> **Creator: Shakal Bhau**
 
 > **GitHub: [ShakalBhau0001](https://github.com/ShakalBhau0001)**
 
