@@ -169,7 +169,7 @@ python file_encrypt_cli.py decrypt --input secret.pdf.enc --password myStrongPas
 
 ## 🪪 Author
 
-> **Created by: Shakal Bhau**
+> **Creator: Shakal Bhau**
 
 > **GitHub: [ShakalBhau0001](https://github.com/ShakalBhau0001)**
 
