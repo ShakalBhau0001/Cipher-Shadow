@@ -146,7 +146,7 @@ python image_encrypt_gui.py
 
 ## 🪪 Author
 
-> **Created by: Shakal Bhau**
+> **Creator: Shakal Bhau**
 
 > **GitHub: [ShakalBhau0001](https://github.com/ShakalBhau0001)**
 
