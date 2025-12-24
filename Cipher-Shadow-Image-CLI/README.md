@@ -200,7 +200,7 @@ python image_encrypt_cli.py decrypt --in-image outputfile.png --password yourpas
 
 ## 🪪 Author
 
-> **Shakal Bhau**
+> **Creator: Shakal Bhau**
 
 > **GitHub: [ShakalBhau0001](https://github.com/ShakalBhau0001)**
 
